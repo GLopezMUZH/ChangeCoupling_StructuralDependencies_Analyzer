@@ -1,0 +1,27 @@
+proj_name:glucosio-android
+proj_lang:java
+repo_url:'https://github.com/Glucosio/glucosio-android.git'
+only_in_branch:'develop'
+
+save_cache_files:True
+delete_cache_files:False
+delete_cg_src_db:True
+
+#%d-%m-%Y
+#since_date:'06-06-2018'
+
+#from_tag:'0.9.0'
+#to_tag:'0.12.0'
+#'41f24fadb8a8e80e25b895a17fa6b372cd8ec354'
+
+from_commit:'2b9a433919de71e716604dd6082abf8bf1542b42'
+to_commit:'915ddfc9bce5b8d0a490a79a28731eb6fd32aede'
+
+path_to_proj_data_dir:'../project_results/'
+srctrl_orig_config_file_path:'../project_config/glucosio-android.srctrlprj'
+
+## Ubuntu Paths
+#path_to_src_files:'app/src/main/java/'
+
+## Windows Paths
+path_to_src_files:'C:/Users/lopm/Documents/gitprojects/call_graph_change_analyser/project_results/glucosio-android/.cache/git/'

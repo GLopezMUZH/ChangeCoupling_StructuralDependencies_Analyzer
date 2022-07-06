@@ -1,0 +1,38 @@
+version: '3.0'
+
+x-python-app:
+  &python-app
+  image: ccsd
+  build: .
+  volumes:
+    - .:/var/project # mounts current directory
+    - cache:/var/share/cache
+  environment:
+    # to be able to show prints directly
+    PYTHONUNBUFFERED: 1
+    POETRY_CACHE_DIR: /var/share/cache/poetry_data/cache
+    POETRY_VIRTUALENVS_PATH: /var/share/cache/poetry_data/virtualenvs
+    CELERY_BROKER_URL: 'redis://redis:6379/0'
+    CELERY_RESULT_BACKEND: 'redis://redis:6379/1'
+
+services:
+  cli:
+    <<: *python-app
+    command: -C project_config/PX4.conf
+    entrypoint: poetry run python -m CCSD.CCSD
+    links:
+      - redis
+    depends_on:
+      - worker
+  worker:
+    <<: *python-app
+    deploy:
+      replicas: 2
+    command: poetry run celery --app=CCSD.celery_app.celery_app worker
+    links:
+      - redis
+  redis:
+    image: redis
+
+volumes:
+  cache: {}

@@ -1,0 +1,22 @@
+proj_name:glucosio-android
+proj_lang:java
+repo_url:'https://github.com/Glucosio/glucosio-android.git'
+only_in_branch:'develop'
+
+save_cache_files:False
+delete_cache_files:False
+delete_cg_src_db:False
+
+#%d-%m-%Y
+since_date:'06-06-2018'
+
+#from_tag:'0.9.0'
+#to_tag:'0.12.0'
+
+path_to_proj_data_dir:'./project_results/'
+
+## Ubuntu Paths
+#path_to_src_files:'app/src/main/java/'
+
+## Windows Paths
+path_to_src_files:'C:/Users/lopm/Documents/gitprojects/CCSD_Change-Coupling-Structural-Dependencies/project_results/glucosio-android/.cache/git/'
