@@ -52,7 +52,7 @@ Example:
 ```bash
 docker-compose run --rm cli -C ./project_config/PX4-Autopilot.pconfig
 ```
-
+PATH_TO_CONFIG_FILE must be written with slashes.
 
 ### Poetry
 Alternativelly to using docker, you can run the analysis of a git project using Poetry.
