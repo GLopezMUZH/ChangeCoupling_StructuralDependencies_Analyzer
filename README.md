@@ -15,7 +15,7 @@ You need to create one configuration file for each project that you would like t
 proj_name: name of the project, this name will be set in the folders and saved databases.
 proj_lang: currently Java, C++ and C, with the possibility to extend it to other languages.
 repo_url: the https url path where the repository can be accessed
-only_in_branch: the default branch is “master”, in case the user needs to analyze another branch, this branch name has to be specified
+only_in_branch: if not set, default branch is “master”
 
 from_tag
 to_tag
