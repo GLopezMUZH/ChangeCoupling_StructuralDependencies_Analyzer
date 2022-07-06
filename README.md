@@ -50,7 +50,7 @@ docker-compose run --rm --entrypoint '' cli poetry run pytest
 ```
 Example:
 ```bash
-docker-compose run --rm cli -C ./project_config/PX4-Autopilot.pconfig
+docker-compose run --rm cli -C ./project_config/glucosio_small.pconfig
 ```
 PATH_TO_CONFIG_FILE must be written with slashes.
 
