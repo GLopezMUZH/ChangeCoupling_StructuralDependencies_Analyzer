@@ -26,7 +26,9 @@ path_to_proj_data_dir: relative target path where the analytics data will be sav
 path_to_src_files: absolute path where git cache files will be saved
 ```
 
-**Notes:** Only one type of time setting can be used, either tags or dates. When using tags, both from and to tags must be set. When using dates, it is possible to only set the since_date, all changes from the given since_date to either the to_date or the current date of execution will be analyzed.
+**Notes:** 
+- Only one type of time setting can be used, either tags or dates. When using tags, both from and to tags must be set. When using dates, it is possible to only set the since_date, all changes from the given since_date to either the to_date or the current date of execution will be analyzed.
+- Examples of configuration files for public git projects can be found in folder *project_config*
 
 
 
@@ -46,7 +48,7 @@ docker-compose run --rm cli [OPTIONS]
 # testing / linting
 docker-compose run --rm --entrypoint '' cli poetry run pytest
 ```
-example:
+Example:
 ```bash
 docker-compose run --rm cli -C ./project_config/PX4-Autopilot.pconfig
 ```
@@ -66,7 +68,7 @@ poetry run pytest
 
 ## Analytics and Visualization Libraries
 
-To display the results obtained after running the application, you can start the Jupyter Notebooks contained in folder **notebooks*.
+To display the results obtained after running the application, you can start the Jupyter Notebooks contained in folder *notebooks*.
 If the default folder structure of the project has not been changed, you need only to change the proj_name to match that of the project configuration file.
 
 ```bash
