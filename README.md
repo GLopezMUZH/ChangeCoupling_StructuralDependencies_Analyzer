@@ -43,7 +43,7 @@ docker-compose build
 docker-compose run --rm --entrypoint '' cli poetry install
 
 # running
-docker-compose run --rm cli [OPTIONS]
+docker-compose run --rm cli -C [PATH_TO_CONFIG_FILE]
 
 # testing / linting
 docker-compose run --rm --entrypoint '' cli poetry run pytest
@@ -61,7 +61,7 @@ Alternativelly to using docker, you can run the analysis of a git project using 
 # installation
 poetry install
 # running
-poetry run python -m CCSD.CCSD [OPTIONS]
+poetry run python -m CCSD.CCSD -C [PATH_TO_CONFIG_FILE]
 # testing / linting
 poetry run pytest
 ```
