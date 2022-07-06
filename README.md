@@ -17,8 +17,8 @@ proj_lang: currently Java, C++ and C, with the possibility to extend it to other
 repo_url: the https url path where the repository can be accessed
 only_in_branch: if not set, default branch is “master”
 
-from_tag
-to_tag
+from_tag:
+to_tag:
 since_date: format 'dd-mm-yyy'
 to_date: format 'dd-mm-yyy'
 
