@@ -3,7 +3,7 @@ import os
 import logging
 from datetime import datetime
 
-from changeAnalyzerSD.models import ProjectPaths
+from CCSD.models import ProjectPaths
 
 from .repository_mining import analyse_source_repository_data
 from .utils_sql import create_db_tables

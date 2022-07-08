@@ -38,9 +38,8 @@ path_to_src_files: absolute path where git cache files will be saved
 You can start the analysis of a git project using Docker.
 
 ```bash
-# installationexit
+# installation
 docker-compose build
-docker-compose run --rm --entrypoint '' cli poetry install
 
 # running
 docker-compose run --rm cli -C [PATH_TO_CONFIG_FILE]
@@ -75,4 +74,7 @@ If the default folder structure of the project has not been changed, you need on
 proj_name = 'glucosio-android' # 'PX4-Autopilot' #'PROJ_NAME'
 ```
 
-The different analytic functions are saved on the notebooks to display different characteristics of the change coupling and structural dependencies based on an *apriori* algorithm to find rules of related changed items. 
+The python virtual environment created by poetry can be used to already have all dependencies installed.
+The location can be determined with the command `poetry env info`.
+
+The different analytic functions are saved on the notebooks to display different characteristics of the change coupling and structural dependencies based on an *apriori* algorithm to find rules of related changed items.
