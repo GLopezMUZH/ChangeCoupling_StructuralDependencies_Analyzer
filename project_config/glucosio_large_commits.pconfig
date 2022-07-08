@@ -17,7 +17,7 @@ delete_cg_src_db:True
 from_commit:'2b9a433919de71e716604dd6082abf8bf1542b42'
 to_commit:'915ddfc9bce5b8d0a490a79a28731eb6fd32aede'
 
-path_to_proj_data_dir:'../project_results/'
+path_to_proj_data_dir:'./project_results/'
 srctrl_orig_config_file_path:'../project_config/glucosio-android.srctrlprj'
 
 ## Ubuntu Paths
