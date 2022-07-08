@@ -6,12 +6,9 @@ x-python-app:
   build: .
   volumes:
     - .:/var/project # mounts current directory
-    - cache:/var/share/cache
   environment:
     # to be able to show prints directly
     PYTHONUNBUFFERED: 1
-    POETRY_CACHE_DIR: /var/share/cache/poetry_data/cache
-    POETRY_VIRTUALENVS_PATH: /var/share/cache/poetry_data/virtualenvs
     CELERY_BROKER_URL: 'redis://redis:6379/0'
     CELERY_RESULT_BACKEND: 'redis://redis:6379/1'
 
@@ -33,6 +30,3 @@ services:
       - redis
   redis:
     image: redis
-
-volumes:
-  cache: {}

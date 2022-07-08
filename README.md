@@ -38,9 +38,8 @@ path_to_src_files: absolute path where git cache files will be saved
 You can start the analysis of a git project using Docker.
 
 ```bash
-# installationexit
+# installation
 docker-compose build
-docker-compose run --rm --entrypoint '' cli poetry install
 
 # running
 docker-compose run --rm cli -C [PATH_TO_CONFIG_FILE]
