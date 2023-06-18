@@ -10,9 +10,9 @@ RUN apt-get update \
   default-jdk \
   && rm -rf /var/lib/apt/lists/*
 
-RUN curl --output /tmp/srcml.deb http://131.123.42.38/lmcrs/v1.0.0/srcml_1.0.0-1_ubuntu20.04.deb \
-  && dpkg -i /tmp/srcml.deb \
-  && rm /tmp/srcml.deb
+#RUN curl --output /tmp/srcml.deb http://131.123.42.38/lmcrs/v1.0.0/srcml_1.0.0-1_ubuntu20.04.deb \
+#  && dpkg -i /tmp/srcml.deb \
+#  && rm /tmp/srcml.deb
 
 ENV SHELL=/bin/bash \
   POETRY_VERSION=1.1.8
