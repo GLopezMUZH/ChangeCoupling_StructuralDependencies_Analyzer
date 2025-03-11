@@ -3,6 +3,10 @@ name = "changeanalyzersd"
 version = "0.1.0"
 description = ""
 authors = []
+packages = [
+    { include = "CCSD" }
+]
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10,<3.11"
@@ -16,6 +20,7 @@ scipy = "^1.8.1"
 Jinja2 = "^3.1.6"
 python-stopwatch = "^1.0.4"
 apyori = "^1.1.2"
+pytz = "^2025.1"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.6.0"
