@@ -77,7 +77,13 @@ def delete_empty_dir(dir_path: str) -> None:
 
 
 def save_source_code_xml(file_path: str) -> None:
-    _command_output_to_file(['srcml', file_path], f'{file_path}.xml')
+    try:
+        _command_output_to_file(['srcml', file_path], f'{file_path}.xml')
+    except (subprocess.CalledProcessError, FileNotFoundError) as e:
+        logging.warning("srcml not found or failed. Skipping XML conversion. Error: %s", str(e))
+        # Create an empty XML file as placeholder to prevent repeated attempts
+        with open(f'{file_path}.xml', 'w', encoding='utf-8') as f:
+            f.write('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<unit/>')
 
 
 def save_source_code_diff_file(arg_prev: str, arg_curr: str, arg_target_file: str) -> None:
