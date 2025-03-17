@@ -119,8 +119,8 @@ def process_git_commit(
     )
 
     for mod_file in commit.modified_files:
-        if is_valid_file_type(str(mod_file._new_path)) or is_valid_file_type(
-            str(mod_file._old_path)
+        if is_valid_file_type(str(mod_file.new_path)) or is_valid_file_type(
+            str(mod_file.old_path)
         ):
             process_file_git_commit(proj_config, proj_paths, commit, mod_file)
 
@@ -141,13 +141,13 @@ def _process_file_git_commit_astdiff_parsing(
     commit: Commit,
     mod_file: ModifiedFile,
 ) -> None:
-    mod_file_data = FileData(str(mod_file._new_path))
-    mod_file_data_prev = FileData(str(mod_file._old_path))
+    mod_file_data = FileData(str(mod_file.new_path))
+    mod_file_data_prev = FileData(str(mod_file.old_path))
 
     # Create sourcediff directory
     if proj_config["save_cache_files"]:
         file_path_sourcediff = os.path.join(
-            proj_paths["path_to_cache_sourcediff"], str(mod_file._new_path)
+            proj_paths["path_to_cache_sourcediff"], str(mod_file.new_path)
         )
         if not os.path.exists(os.path.dirname(file_path_sourcediff)):
             os.makedirs(os.path.dirname(file_path_sourcediff))
@@ -159,7 +159,7 @@ def _process_file_git_commit_astdiff_parsing(
         and mod_file.change_type != ModificationType.RENAME
     ):
         file_path_current = os.path.join(
-            proj_paths["path_to_cache_current"], str(mod_file._new_path)
+            proj_paths["path_to_cache_current"], str(mod_file.new_path)
         )
         save_source_code(file_path_current, mod_file.source_code)
 
@@ -169,19 +169,19 @@ def _process_file_git_commit_astdiff_parsing(
         and mod_file.change_type != ModificationType.RENAME
     ):
         file_path_previous = os.path.join(
-            proj_paths["path_to_cache_previous"], str(mod_file._old_path)
+            proj_paths["path_to_cache_previous"], str(mod_file.old_path)
         )
         save_source_code(file_path_previous, mod_file.source_code_before)
 
     if mod_file.change_type == ModificationType.RENAME:
         print(
             "RENAME. File {0} old path: {1}, new path: {2}. TODO".format(
-                mod_file.filename, mod_file._new_path, mod_file._old_path
+                mod_file.filename, mod_file.new_path, mod_file.old_path
             )
         )
         logging.info(
             "RENAME. File {0} old path: {1}, new path: {2}. TODO".format(
-                mod_file.filename, mod_file._new_path, mod_file._old_path
+                mod_file.filename, mod_file.new_path, mod_file.old_path
             )
         )
         return
@@ -244,7 +244,7 @@ def update_function_calls(
     file_path_previous: Optional[str] = None,
 ):
 
-    mod_file_data = FileData(str(mod_file._new_path))
+    mod_file_data = FileData(str(mod_file.new_path))
 
     if proj_config["proj_lang"] == "java" or proj_config["proj_lang"] == "cpp":
         # Current source code
@@ -266,7 +266,7 @@ def update_function_calls(
 
             save_compact_xml_parsed_code(
                 path_to_cache_dir=proj_paths["path_to_cache_current"],
-                relative_file_path=str(mod_file._new_path),
+                relative_file_path=str(mod_file.new_path),
                 source_text=curr_src_str,
             )
 
@@ -306,7 +306,7 @@ def update_function_calls(
 
             save_compact_xml_parsed_code(
                 path_to_cache_dir=proj_paths["path_to_cache_previous"],
-                relative_file_path=str(mod_file._new_path),
+                relative_file_path=str(mod_file.new_path),
                 source_text=prev_src_str,
             )
 
