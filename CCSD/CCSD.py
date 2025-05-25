@@ -34,7 +34,7 @@ def main() -> None:
 
     # can only log after seting log file path
     print(("Started App ---------- %s", datetime.now()))
-    logging.info("Started App ---------- ", datetime.now())
+    logging.info("Started App ---------- %s", datetime.now())
 
     print("proj_paths")
     print(proj_paths)
