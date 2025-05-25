@@ -12,6 +12,8 @@
 # vscode settings.json
 .vscode/* 
 .vscode/settings.json
+.VSCodeCounter/* 
+
 
 # webasssets cache and generated files
 /src/web/static/.webassets-cache
