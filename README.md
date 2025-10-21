@@ -81,7 +81,6 @@ The different analytic functions are saved on the notebooks to display different
 
 
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub issues](https://img.shields.io/github/issues/GLopezMUZH/ChangeCoupling_StructuralDependencies_Analyzer)](https://github.com/GLopezMUZH/ChangeCoupling_StructuralDependencies_Analyzer/issues)
 [![GitHub forks](https://img.shields.io/github/forks/GLopezMUZH/ChangeCoupling_StructuralDependencies_Analyzer)](https://github.com/GLopezMUZH/ChangeCoupling_StructuralDependencies_Analyzer/network)
 
